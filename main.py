@@ -1,6 +1,6 @@
-import discord
+import discord, os
 from dotenv import load_dotenv
-from utility import *
+from utility import class_data, num_classes
 
 load_dotenv()
 intents = discord.Intents.all()

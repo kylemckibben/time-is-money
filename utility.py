@@ -8,7 +8,7 @@ def generate_class_icon_paths() -> list:
     class_icon_paths = []
     icons = os.listdir("icons/")
     for icon in icons:
-        class_icon_paths.append("/wow-guild-bot/icons/" + icon)
+        class_icon_paths.append("/time-is-money/icons/" + icon)
     return class_icon_paths
 
 
