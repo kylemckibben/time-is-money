@@ -22,6 +22,7 @@ async def on_message(message):
         return
     
     if message.content == '/generate-classes':
+        """Generate class emojis and roles."""
         for i in range(num_classes):
             await message.guild.create_custom_emoji(
                 name="wow_" + class_data[i][0],
