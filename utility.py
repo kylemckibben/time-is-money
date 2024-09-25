@@ -1,5 +1,7 @@
 import os
 
+num_classes = 13
+
 class_names = [
     'death_knight', 
     'demon_hunter', 
@@ -16,6 +18,23 @@ class_names = [
     'warrior'
 ]
 
+class_colors = [
+    "#c41f3a", # dk
+    "#a330c9", # dh
+    "#ff7c0a", # dr
+    "#33937f", # ev
+    "#aad372", # hu
+    "#3fc7eb", # ma
+    "#00ff98", # mo
+    "#f48cba", # pa
+    "#ffffff", # pr
+    "#fff468", # ro
+    "#0070dd", # sh
+    "#8788ee", # wl
+    "#c69b6d"  # wr
+]
+
+
 def generate_class_icon_paths() -> list:
     """
     Generates list of class icon paths.
@@ -25,6 +44,7 @@ def generate_class_icon_paths() -> list:
     for icon in icons:
         class_icon_paths.append("/wow-guild-bot/icons/" + icon)
     return class_icon_paths
+
 
 def generate_class_icon_byteobjs() -> list:
     """
@@ -39,3 +59,16 @@ def generate_class_icon_byteobjs() -> list:
             icon = img.read()
             class_icon_byteobjs.append(icon)
     return class_icon_byteobjs
+
+
+def generate_class_titles() -> list:
+    """
+    Generate list of title case class names.
+    """
+    class_titles = []
+    for i in range(len(class_names)):
+        current_name = class_names[i]
+        if current_name.count("_") > 0:
+            current_name = current_name.replace("_", " ")
+        class_titles.append(current_name.title())
+    return class_titles
