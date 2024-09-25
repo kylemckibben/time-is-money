@@ -20,18 +20,13 @@ async def on_message(message):
     if message.author == client.user:
         """Ignore messages from the bot."""
         return
-
-    if message.content == '/generate-class-emojis':
-        """Generate class emojis on server."""
+    
+    if message.content == '/generate-classes':
         for i in range(num_classes):
             await message.guild.create_custom_emoji(
                 name="wow_" + class_data[i][0],
                 image=class_data[i][3]
             )
-
-    if message.content == '/generate-class-roles':
-        """Generate class roles on server."""
-        for i in range(num_classes):
             await message.guild.create_role(
                 name=class_data[i][1],
                 color=discord.Colour.from_str(class_data[i][2])
