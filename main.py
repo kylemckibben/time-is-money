@@ -26,7 +26,7 @@ async def on_message(message):
         class_icons = generate_class_icon_byteobjs()
         for i in range(num_classes):
             await message.guild.create_custom_emoji(
-                name=class_names[i],
+                name="wow_" + class_names[i],
                 image=class_icons[i]
             )
 
