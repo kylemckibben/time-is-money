@@ -1,39 +1,5 @@
 import os
 
-num_classes = 13
-
-class_names = [
-    'death_knight', 
-    'demon_hunter', 
-    'druid', 
-    'evoker', 
-    'hunter', 
-    'mage', 
-    'monk', 
-    'paladin', 
-    'priest', 
-    'rogue', 
-    'shaman', 
-    'warlock', 
-    'warrior'
-]
-
-class_colors = [
-    "#c41f3a", # dk
-    "#a330c9", # dh
-    "#ff7c0a", # dr
-    "#33937f", # ev
-    "#aad372", # hu
-    "#3fc7eb", # ma
-    "#00ff98", # mo
-    "#f48cba", # pa
-    "#ffffff", # pr
-    "#fff468", # ro
-    "#0070dd", # sh
-    "#8788ee", # wl
-    "#c69b6d"  # wr
-]
-
 
 def generate_class_icon_paths() -> list:
     """
@@ -60,15 +26,22 @@ def generate_class_icon_byteobjs() -> list:
             class_icon_byteobjs.append(icon)
     return class_icon_byteobjs
 
+class_icons = generate_class_icon_byteobjs()
 
-def generate_class_titles() -> list:
-    """
-    Generate list of title case class names.
-    """
-    class_titles = []
-    for i in range(len(class_names)):
-        current_name = class_names[i]
-        if current_name.count("_") > 0:
-            current_name = current_name.replace("_", " ")
-        class_titles.append(current_name.title())
-    return class_titles
+class_data = [
+    ('death_knight', 'Death Knight', '#c41f3a', class_icons[0]),
+    ('demon_hunter','Demon Hunter','#a330c9', class_icons[1]),
+    ('druid','Druid','#ff7c0a', class_icons[2]),
+    ('evoker','Evoker','#33937f', class_icons[3]),
+    ('hunter','Hunter','#aad372', class_icons[4]),
+    ('mage','Mage','#3fc7eb', class_icons[5]),
+    ('monk','Monk','#00ff98', class_icons[6]),
+    ('paladin','Paladin','#f48cba', class_icons[7]),
+    ('priest','Priest','#ffffff', class_icons[8]),
+    ('rogue','Rogue','#fff468', class_icons[9]),
+    ('shaman','Shaman','#0070dd', class_icons[10]),
+    ('warlock','Warlock','#8788ee', class_icons[11]),
+    ('warrior','Warrior','#c69b6d', class_icons[12]),
+]
+
+num_classes = len(class_data)

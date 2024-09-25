@@ -23,20 +23,18 @@ async def on_message(message):
 
     if message.content == '/generate-class-emojis':
         """Generate class emojis on server."""
-        class_icons = generate_class_icon_byteobjs()
         for i in range(num_classes):
             await message.guild.create_custom_emoji(
-                name="wow_" + class_names[i],
-                image=class_icons[i]
+                name="wow_" + class_data[i][0],
+                image=class_data[i][3]
             )
 
     if message.content == '/generate-class-roles':
         """Generate class roles on server."""
-        class_titles = generate_class_titles()
         for i in range(num_classes):
             await message.guild.create_role(
-                name=class_titles[i],
-                color=discord.Colour.from_str(class_colors[i])
+                name=class_data[i][1],
+                color=discord.Colour.from_str(class_data[i][2])
             )
         
 
