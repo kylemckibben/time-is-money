@@ -32,6 +32,21 @@ async def on_message(message):
                 name=class_data[i][1],
                 color=discord.Colour.from_str(class_data[i][2])
             )
+
+    if message.content == '/start-here':
+        """Generate start here category with role-assign channel."""
+        overwrites={
+            message.guild.default_role: discord.PermissionOverwrite(add_reactions=False)
+        }
+        category = await message.guild.create_category(
+            name='Start Here'
+        )
+        await category.edit(position=0) # would not set to pos 0 when setting in create_category()
+        await message.guild.create_text_channel(
+            name='role-assign',
+            overwrites=overwrites,
+            category=category
+        )
         
 
 client.run(os.getenv("BOT_LOGIN_TOKEN"))
