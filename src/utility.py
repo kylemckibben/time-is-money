@@ -6,7 +6,7 @@ def generate_class_icon_paths() -> list:
     Generates list of class icon paths.
     """
     class_icon_paths = []
-    icons = os.listdir("icons/")
+    icons = os.listdir("../icons/")
     for icon in icons:
         class_icon_paths.append("/time-is-money/icons/" + icon)
     return class_icon_paths
