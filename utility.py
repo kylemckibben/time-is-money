@@ -29,19 +29,19 @@ def generate_class_icon_byteobjs() -> list:
 class_icons = generate_class_icon_byteobjs()
 
 class_data = [
-    ('death_knight', 'Death Knight', '#c41f3a', class_icons[0]),
-    ('demon_hunter','Demon Hunter','#a330c9', class_icons[1]),
-    ('druid','Druid','#ff7c0a', class_icons[2]),
-    ('evoker','Evoker','#33937f', class_icons[3]),
-    ('hunter','Hunter','#aad372', class_icons[4]),
-    ('mage','Mage','#3fc7eb', class_icons[5]),
-    ('monk','Monk','#00ff98', class_icons[6]),
-    ('paladin','Paladin','#f48cba', class_icons[7]),
-    ('priest','Priest','#ffffff', class_icons[8]),
-    ('rogue','Rogue','#fff468', class_icons[9]),
-    ('shaman','Shaman','#0070dd', class_icons[10]),
-    ('warlock','Warlock','#8788ee', class_icons[11]),
-    ('warrior','Warrior','#c69b6d', class_icons[12]),
+    ('wow_death_knight',class_icons[0],'Death Knight','#c41f3a'),
+    ('wow_demon_hunter',class_icons[1],'Demon Hunter','#a330c9'),
+    ('wow_druid',class_icons[2],'Druid','#ff7c0a'),
+    ('wow_evoker',class_icons[3],'Evoker','#33937f'),
+    ('wow_hunter',class_icons[4],'Hunter','#aad372'),
+    ('wow_mage',class_icons[5],'Mage','#3fc7eb'),
+    ('wow_monk',class_icons[6],'Monk','#00ff98'),
+    ('wow_paladin',class_icons[7],'Paladin','#f48cba'),
+    ('wow_priest',class_icons[8],'Priest','#ffffff'),
+    ('wow_rogue',class_icons[9],'Rogue','#fff468'),
+    ('wow_shaman',class_icons[10],'Shaman','#0070dd'),
+    ('wow_warlock',class_icons[11],'Warlock','#8788ee'),
+    ('wow_warrior',class_icons[12],'Warrior','#c69b6d'),
 ]
 
 num_classes = len(class_data)
